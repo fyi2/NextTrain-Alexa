@@ -1,0 +1,31 @@
+{"stop_id":"Southborough","stop_name":"Southborough",
+  "mode":[{"route_type":"2","mode_name":"Commuter Rail",
+    "route":[{"route_id":"CR-Worcester","route_name":"Framingham/Worcester Line",
+      "direction":[{"direction_id":"0","direction_name":"Outbound",
+        "trip":[{"trip_id":"CR-Weekday-Spring-17-515","trip_name":"515 (2:00 pm from South Station)","sch_arr_dt":"1501182120","sch_dep_dt":"1501182120"},
+          {"trip_id":"CR-Weekday-Spring-17-517","trip_name":"517 (3:30 pm from South Station)","sch_arr_dt":"1501187820","sch_dep_dt":"1501187820"},
+          {"trip_id":"CR-Weekday-Spring-17-519","trip_name":"519 (4:20 pm from South Station)","sch_arr_dt":"1501190220","sch_dep_dt":"1501190220"},
+          {"trip_id":"CR-Weekday-Spring-17-521","trip_name":"521 (5:00 pm from South Station)","sch_arr_dt":"1501192500","sch_dep_dt":"1501192500"},
+          {"trip_id":"CR-Weekday-Spring-17-523","trip_name":"523 (5:40 pm from South Station)","sch_arr_dt":"1501194840","sch_dep_dt":"1501194840"}]},
+      {"direction_id":"1","direction_name":"Inbound",
+        "trip":[{"trip_id":"CR-Weekday-Spring-17-518","trip_name":"518 (1:55 pm from Worcester)","sch_arr_dt":"1501179660","sch_dep_dt":"1501179660"},
+          {"trip_id":"CR-Weekday-Spring-17-520","trip_name":"520 (3:50 pm from Worcester)","sch_arr_dt":"1501186560","sch_dep_dt":"1501186560"},
+          {"trip_id":"CR-Weekday-Spring-17-522","trip_name":"522 (5:20 pm from Worcester)","sch_arr_dt":"1501191960","sch_dep_dt":"1501191960"},
+          {"trip_id":"CR-Weekday-Spring-17-524","trip_name":"524 (6:05 pm from Worcester)","sch_arr_dt":"1501194660","sch_dep_dt":"1501194660"}]}]}]}]}
+
+
+{"stop_id":"Southborough","stop_name":"Southborough",
+  "mode":[{"route_type":"2","mode_name":"Commuter Rail",
+    "route":[{"route_id":"CR-Worcester","route_name":"Framingham/Worcester Line",
+      "direction":[{"direction_id":"0","direction_name":"Outbound",
+        "trip":[{"trip_id":"CR-Weekday-Spring-17-515","trip_name":"515 (2:00 pm from SouthStation)" ,"trip_headsign":"Worcester","sch_arr_dt":"1501182120","sch_dep_dt":"1501182120","pre_dt":"1501181981","pre_away":"4142","vehicle":{"vehicle_id":"1810","vehicle_lat":"42.3507881164551","vehicle_lon":"-71.055908203125","vehicle_bearing":"206","vehicle_speed":"0","vehicle_timestamp":"1501177748","vehicle_label":"1810"}}]},
+        {"direction_id":"1","direction_name":"Inbound",
+          "trip":[{"trip_id":"CR-Weekday-Spring-17-518","trip_name":"518 (1:55 pm from Worcester)","trip_headsign":"South Station","sch_arr_dt":"1501179660","sch_dep_dt":"1501179660","pre_dt":"1501179649","pre_away":"1810","vehicle":{"vehicle_id":"1827","vehicle_lat":"42.2614593505859","vehicle_lon":"-71.7931518554688","vehicle_bearing":"93","vehicle_speed":"0","vehicle_timestamp":"1501177763","vehicle_label":"1827"}}]}]}]}],"alert_headers":[]}
+
+
+{"stop_id":"Southborough","stop_name":"Southborough",
+  "mode":[{"route_type":"2","mode_name":"Commuter Rail",
+    "route":[{"route_id":"CR-Worcester","route_name":"Framingham/Worcester Line",
+      "direction":[{"direction_id":"0","direction_name":"Outbound",
+        "trip":[{"trip_id":"CR-Saturday-Spring-17-CAC-1507","trip_name":"1507 (12:54 pm from Boston Landing)","trip_headsign":"Worcester","sch_arr_dt":"1501350060","sch_dep_dt":"1501350060","pre_dt":"1501350021","pre_away":"1140","vehicle":{"vehicle_id":"1707","vehicle_lat":"42.2894287109375","vehicle_lon":"-71.3320388793945","vehicle_bearing":"241","vehicle_speed":"25","vehicle_timestamp":"1501348799","vehicle_label":"1707"}}]}]}]}],
+  "alert_headers":[{"alert_id":195223,"header_text":"Please board all Worcester trains on the outbound platforms at Ashland & Southborough stations today.","effect_name":"Track Change"}]}
