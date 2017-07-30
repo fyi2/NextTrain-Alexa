@@ -5,6 +5,10 @@ var schedDetails = ''
 var predictedDetails = ''
 var inboundTrains = ''
 var outboundTrains = ''
+// Configuration Elements
+var stationList = ['Southborough', 'Framingham']
+var following = false
+var direction = 0 // Needs better programming
 
 var BASE= 'http://realtime.mbta.com/developer/api/v2/'
 var GET_SCHEDULE = 'schedulebystop' // predictionsbystop, alertsbystop
@@ -13,7 +17,6 @@ var KEY = '?api_key=wX9NwuHnZU2ToO7GmGR9uw' // Developer's key change for produc
 var FORMAT = '&format=json'
 var MAX_TIME = '&max_time=300'
 var APIList = []
-var stationList = ['Framingham', 'Southborough']
 let promises = []
 
 APIList = buildAPIList(stationList)
@@ -25,15 +28,20 @@ Promise.all(promises)
   .then((results) => {
     inboundTrains = []
     outboundTrains = []
-//    console.log("Number of promises:"+promises.length);
     for (j=0;j<results.length;j+=2){
-      console.log(results[j]);
-      console.log(results[j+1]);
       jDataSchedule = JSON.parse(results[j])
       jDataPredict = JSON.parse(results[j+1])
-//      console.log(jDataSchedule.stop_name,j);
-      inboundTrains.push.apply(inboundTrains,getTrains(1,jDataSchedule, jDataPredict));
-      outboundTrains.push.apply(outboundTrains,getTrains(0,jDataSchedule, jDataPredict));
+      if (direction === 2){
+        inboundTrains.push.apply(inboundTrains,getTrains(1,jDataSchedule, jDataPredict));
+        outboundTrains.push.apply(outboundTrains,getTrains(0,jDataSchedule, jDataPredict));
+      }
+      else if (direction === 1 ) {
+        inboundTrains.push.apply(inboundTrains,getTrains(1,jDataSchedule, jDataPredict));
+
+      } else {
+        outboundTrains.push.apply(outboundTrains,getTrains(0,jDataSchedule, jDataPredict));
+
+      }
     }
 
     // DEBUGGING
@@ -55,13 +63,17 @@ Promise.all(promises)
     function getTrains(inOut, scheduled, predicted){
       var trains = []
       var spoken = '';
+      loopCount = 1
+      if (following){
+        loopCount++
+      }
       if (scheduled.mode[0].route[0].direction[inOut].trip[i] === undefined){
         tripID = ''
       } else {
         tripID = scheduled.mode[0].route[0].direction[inOut].trip[i].trip_id
       }
 
-      for (i=0;i<2;i++){
+      for (i=0;i<loopCount;i++){
         predictionStr = getPrediction(i, tripID,inOut,predicted)
         spoken = getScheduled(i,tripID,inOut,scheduled)+predictionStr
         trains[i] = spoken
@@ -112,6 +124,7 @@ function realTime(epoch){
 
 // Make the trip name sound good
 function trimTrip(text){
+  console.log(text);
   var i = text.indexOf("\(")
   var i2 = text.indexOf("\)")
   return text.substring(i+1,i2);
